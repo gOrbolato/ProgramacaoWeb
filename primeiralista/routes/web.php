@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ExerciciosController;
 
 
 Route::get('/', function(){
@@ -191,9 +192,6 @@ Route::get('/ex15', function(){
 
 Route::post('/listaex15', function(Request $request){
     $dias = floatval($request->input('dias'));
-    $horas = ($dias * 24, 2);
-    $minutos = ($horas * 60, 2);
-    $segundos = ($minutos * 60, 2);
     $resultado = "$dias dias, $horas horas, $minutos minutos e $segundos segundos";
     return view('lista.ex15', compact('resultado'));
 });
